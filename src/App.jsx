@@ -4,7 +4,7 @@ import Leaderboard from './components/Leaderboard';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-neutral-50 to-neutral-100 text-neutral-900">
+    <div className="min-h-screen bg-[radial-gradient(1200px_600px_at_50%_-100px,rgba(80,80,255,0.22),transparent_60%)] bg-neutral-950 text-neutral-100">
       <Hero />
       <main className="relative -mt-16 md:-mt-24">
         <div className="max-w-6xl mx-auto">

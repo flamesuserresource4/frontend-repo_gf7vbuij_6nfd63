@@ -22,25 +22,25 @@ export default function Leaderboard() {
   }, []);
 
   return (
-    <section className="py-12">
+    <section className="py-16">
       <div className="max-w-3xl mx-auto px-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-semibold tracking-tight">Leaderboard</h2>
-          <span className="text-sm text-neutral-500">Top 20</span>
+          <h2 className="text-2xl font-semibold tracking-tight text-white">Leaderboard</h2>
+          <span className="text-sm text-neutral-400">Top 20</span>
         </div>
-        <div className="rounded-xl border border-neutral-200 overflow-hidden bg-white/70 backdrop-blur">
+        <div className="rounded-xl border border-neutral-800 overflow-hidden bg-neutral-900/70 backdrop-blur">
           {loading ? (
-            <div className="p-6 text-center text-neutral-500">Loading...</div>
+            <div className="p-6 text-center text-neutral-400">Loading...</div>
           ) : scores.length === 0 ? (
-            <div className="p-6 text-center text-neutral-500">No scores yet. Be the first!</div>
+            <div className="p-6 text-center text-neutral-400">No scores yet. Be the first!</div>
           ) : (
-            <ul className="divide-y divide-neutral-200">
+            <ul className="divide-y divide-neutral-800">
               {scores.map((s, i) => (
-                <li key={s.id} className="grid grid-cols-5 items-center px-4 py-3 text-sm">
+                <li key={s.id || i} className="grid grid-cols-5 items-center px-4 py-3 text-sm text-neutral-200">
                   <span className="font-mono text-neutral-500">#{i + 1}</span>
-                  <span className="col-span-2 font-medium">{s.name}</span>
+                  <span className="col-span-2 font-medium text-white/90">{s.name}</span>
                   <span className="text-right">{(s.time_ms / 1000).toFixed(2)}s</span>
-                  <span className="text-right text-neutral-600">{s.moves} moves</span>
+                  <span className="text-right text-neutral-400">{s.moves} moves</span>
                 </li>
               ))}
             </ul>
